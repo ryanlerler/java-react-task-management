@@ -58,7 +58,10 @@ public class TaskController {
     @GetMapping("/task/{id}")
     public ResponseEntity<Task> getTask(@PathVariable UUID id) throws TaskNotFoundException {
         // TODO: Implement this method for Task 1a.
-        throw new RuntimeException("Not implemented");
+        Task task = taskService.findById(id)
+        .orElseThrow(() -> new TaskNotFoundException(id));
+        return ResponseEntity.ok(task);
+        // throw new RuntimeException("Not implemented");
     }
 
     @Operation(summary = "Delete a task")

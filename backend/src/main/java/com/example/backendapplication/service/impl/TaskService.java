@@ -11,6 +11,7 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
 import java.util.Date;
+import java.util.Optional;
 import java.util.UUID;
 
 @Service
@@ -43,5 +44,10 @@ public class TaskService implements ITaskService {
 
         task.setCompleted(!task.isCompleted());
         return taskRepository.save(task);
+    }
+
+    @Override
+    public Optional<Task> findById(UUID id) {
+        return taskRepository.findById(id);
     }
 }

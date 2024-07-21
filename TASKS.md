@@ -3,7 +3,7 @@
 
 Mark the tasks you have completed with an `x` in the checkbox. This is required for your submission to be reviewed.
 - [x] Task 0: Run the Existing Application
-- [ ] Task 1a: Implement the "Get Task" API in Backend TaskController
+- [x] Task 1a: Implement the "Get Task" API in Backend TaskController
 - [ ] Task 1b: Implement the "Delete Task" API in Backend TaskController
 - [ ] Task 1c: Implement the "Update Task" API in Backend TaskController
 - [ ] Task 2: Implement the "Delete Task" Feature in Frontend
