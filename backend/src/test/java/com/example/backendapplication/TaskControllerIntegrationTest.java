@@ -70,15 +70,15 @@ class TaskControllerIntegrationTest {
                 .andExpect(content().string("Task with id " + INVALID_ID + " not found"));
     }
 
-//     @Test
-//     void testGetTask() throws Exception {
-//         mockMvc.perform(get("/tasks/task/{id}", getTaskId()))
-//                 .andExpect(status().isOk());
+    @Test
+    void testGetTask() throws Exception {
+        mockMvc.perform(get("/tasks/task/{id}", getTaskId()))
+                .andExpect(status().isOk());
 
-//         mockMvc.perform(get("/tasks/task/{id}", INVALID_ID))
-//                 .andExpect(status().isBadRequest())
-//                 .andExpect(content().string("Task with id " + INVALID_ID + " not found"));
-//     }
+        mockMvc.perform(get("/tasks/task/{id}", INVALID_ID))
+                .andExpect(status().isBadRequest())
+                .andExpect(content().string("Task with id " + INVALID_ID + " not found"));
+    }
 
 //     @Test
 //     void testUpdateTask() throws Exception {
@@ -98,13 +98,13 @@ class TaskControllerIntegrationTest {
 //                 .andExpect(content().string("Task with id " + INVALID_ID + " not found"));
 //     }
 
-//     @Test
-//     void testDeleteTask() throws Exception {
-//         mockMvc.perform(delete("/tasks/task/{id}", getTaskId()))
-//                 .andExpect(status().isOk());
+    @Test
+    void testDeleteTask() throws Exception {
+        mockMvc.perform(delete("/tasks/task/{id}", getTaskId()))
+                .andExpect(status().isOk());
 
-//         mockMvc.perform(delete("/tasks/task/{id}", INVALID_ID))
-//                 .andExpect(status().isBadRequest())
-//                 .andExpect(content().string("Task with id " + INVALID_ID + " not found"));
-//     }
+        mockMvc.perform(delete("/tasks/task/{id}", INVALID_ID))
+                .andExpect(status().isBadRequest())
+                .andExpect(content().string("Task with id " + INVALID_ID + " not found"));
+    }
 }

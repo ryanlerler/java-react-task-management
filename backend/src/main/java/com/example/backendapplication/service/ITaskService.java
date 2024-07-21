@@ -12,5 +12,6 @@ public interface ITaskService {
     Page<Task> getAllTasks(Pageable page);
     Task createTask(String title, String description);
     Task toggleTaskCompletion(UUID taskId) throws TaskNotFoundException;
-    Optional<Task> findById(UUID id); 
+    Optional<Task> findById(UUID taskId); 
+    void deleteTask(UUID taskId) throws TaskNotFoundException; 
 }

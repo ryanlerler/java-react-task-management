@@ -47,7 +47,15 @@ public class TaskService implements ITaskService {
     }
 
     @Override
-    public Optional<Task> findById(UUID id) {
-        return taskRepository.findById(id);
+    public Optional<Task> findById(UUID taskId) {
+        return taskRepository.findById(taskId);
+    }
+
+    @Override
+    public void deleteTask(UUID taskId) throws TaskNotFoundException {
+        if (!taskRepository.existsById(taskId)) {
+            throw new TaskNotFoundException(taskId);
+        }
+        taskRepository.deleteById(taskId);
     }
 }
