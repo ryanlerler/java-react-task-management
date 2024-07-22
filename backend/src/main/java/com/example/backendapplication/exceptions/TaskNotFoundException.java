@@ -7,7 +7,7 @@ import java.util.UUID;
 
 @AllArgsConstructor
 @Getter
-public class TaskNotFoundException extends Exception {
+public class TaskNotFoundException extends RuntimeException  {
 
     private final UUID taskId;
 

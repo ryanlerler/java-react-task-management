@@ -1,5 +1,4 @@
 package com.example.backendapplication.model;
-
 import jakarta.persistence.*;
 import lombok.*;
 
@@ -14,15 +13,13 @@ import java.util.UUID;
 @NoArgsConstructor
 @AllArgsConstructor
 @Table(name = "tasks")
-public class Task {
 
+public class Subtask {
     @Id
-    @GeneratedValue(strategy = GenerationType.UUID)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private UUID id;
 
     private String name;
-
-    private String details;
 
     private boolean completed;
 
@@ -30,6 +27,7 @@ public class Task {
 
     private Date updatedDate;
 
-    @OneToMany(mappedBy = "task", cascade = CascadeType.ALL, orphanRemoval = true)
-    private List<Subtask> subtasks;
+    @ManyToOne
+    @JoinColumn(name = "task_id")
+    private Task task;
 }
