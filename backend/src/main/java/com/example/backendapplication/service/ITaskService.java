@@ -14,4 +14,5 @@ public interface ITaskService {
     Task toggleTaskCompletion(UUID taskId) throws TaskNotFoundException;
     Optional<Task> findById(UUID taskId); 
     void deleteTask(UUID taskId) throws TaskNotFoundException; 
+    Task updateTask(UUID id, String title, String description) throws TaskNotFoundException;
 }

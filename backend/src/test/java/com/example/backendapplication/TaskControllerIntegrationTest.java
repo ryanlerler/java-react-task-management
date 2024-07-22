@@ -80,23 +80,23 @@ class TaskControllerIntegrationTest {
                 .andExpect(content().string("Task with id " + INVALID_ID + " not found"));
     }
 
-//     @Test
-//     void testUpdateTask() throws Exception {
-//         TaskCreationRequest request = new TaskCreationRequest();
-//         request.setName("Updated Task");
-//         request.setDetails("Updated Details");
+    @Test
+    void testUpdateTask() throws Exception {
+        TaskCreationRequest request = new TaskCreationRequest();
+        request.setName("Updated Task");
+        request.setDetails("Updated Details");
 
-//         mockMvc.perform(post("/tasks/task/{id}", getTaskId())
-//                         .contentType(MediaType.APPLICATION_JSON)
-//                         .content(objectMapper.writeValueAsString(request)))
-//                 .andExpect(status().isOk());
+        mockMvc.perform(post("/tasks/task/{id}", getTaskId())
+                        .contentType(MediaType.APPLICATION_JSON)
+                        .content(objectMapper.writeValueAsString(request)))
+                .andExpect(status().isOk());
 
-//         mockMvc.perform(post("/tasks/task/{id}", INVALID_ID)
-//                         .contentType(MediaType.APPLICATION_JSON)
-//                         .content(objectMapper.writeValueAsString(request)))
-//                 .andExpect(status().isBadRequest())
-//                 .andExpect(content().string("Task with id " + INVALID_ID + " not found"));
-//     }
+        mockMvc.perform(post("/tasks/task/{id}", INVALID_ID)
+                        .contentType(MediaType.APPLICATION_JSON)
+                        .content(objectMapper.writeValueAsString(request)))
+                .andExpect(status().isBadRequest())
+                .andExpect(content().string("Task with id " + INVALID_ID + " not found"));
+    }
 
     @Test
     void testDeleteTask() throws Exception {

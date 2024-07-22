@@ -58,4 +58,13 @@ public class TaskService implements ITaskService {
         }
         taskRepository.deleteById(taskId);
     }
+
+    @Override
+    public Task updateTask(UUID id, String title, String description) throws TaskNotFoundException {
+        Task task = taskRepository.findById(id).orElseThrow(() -> new TaskNotFoundException(id));
+        task.setName(title);
+        task.setDetails(description);
+        task.setUpdatedDate(new Date());
+        return taskRepository.save(task);
+    }
 }

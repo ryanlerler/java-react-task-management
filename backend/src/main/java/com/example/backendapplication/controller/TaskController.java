@@ -77,6 +77,8 @@ public class TaskController {
     @PostMapping("/task/{id}")
     public ResponseEntity<Task> updateTask(@PathVariable UUID id, @RequestBody @Valid TaskCreationRequest request) throws TaskNotFoundException {
         // TODO: Implement this method for Task 1c.
-        throw new RuntimeException("Not implemented");
+        // throw new RuntimeException("Not implemented");
+        Task updatedTask = taskService.updateTask(id, request.getName(), request.getDetails());
+        return ResponseEntity.ok(updatedTask);
     }
 }
