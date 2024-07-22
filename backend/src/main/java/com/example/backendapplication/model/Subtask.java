@@ -3,7 +3,6 @@ import jakarta.persistence.*;
 import lombok.*;
 
 import java.util.Date;
-import java.util.List;
 import java.util.UUID;
 
 @Getter
@@ -12,22 +11,24 @@ import java.util.UUID;
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-@Table(name = "tasks")
-
+@Table(name = "subtasks")  
 public class Subtask {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.AUTO)  
     private UUID id;
 
+    @Column(nullable = false)
     private String name;
 
     private boolean completed;
 
+    @Column(nullable = false)
     private Date createdDate;
 
+    @Column(nullable = false)
     private Date updatedDate;
 
-    @ManyToOne
-    @JoinColumn(name = "task_id")
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "task_id", nullable = false)
     private Task task;
 }
