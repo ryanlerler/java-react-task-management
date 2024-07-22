@@ -22,6 +22,11 @@ const Post = async (endpoint: string, parameters: Object) => {
   return response.data;
 };
 
-export { Get, Post };
+const Delete = async (endpoint: string) => {
+  const response = await api.delete(endpoint);
+  return response.data;
+};
+
+export { Get, Post, Delete };
 
 // TODO: Implement the Put and Delete functions

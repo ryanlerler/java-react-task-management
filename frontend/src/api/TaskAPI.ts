@@ -1,5 +1,5 @@
 import { CreateTask } from "../types/Task";
-import { Get, Post } from "./API";
+import { Get, Post, Delete } from "./API";
 
 const fetchAllTasks = async () => {
   const response = await Get("/tasks/", {});
@@ -12,7 +12,13 @@ const createTask = async (task: CreateTask) => {
   return response;
 };
 
-export { fetchAllTasks, createTask };
+const deleteTask = async (id: string) => {
+  const response = await Delete(`/tasks/task/${id}`);
+  return response;
+};
+
+
+export { fetchAllTasks, createTask, deleteTask };
 
 // TODO: Implement the following functions
 // - toggleTaskCompletion

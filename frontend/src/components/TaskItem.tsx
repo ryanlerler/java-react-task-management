@@ -15,7 +15,7 @@
 
 // Solution
 import React from "react";
-import { Checkbox } from "antd";
+import { Button, Checkbox } from "antd";
 import { Task } from "../types/Task";
 
 interface TaskItemProps {
@@ -24,17 +24,18 @@ interface TaskItemProps {
   // - Add a subtask to the task
   // - Toggle the completion status of the task
   // - Toggle the completion status of a subtask
+  deleteTask: (id: string) => Promise<void>;
 }
 
 export const TaskItem: React.FC<TaskItemProps> = ({
-  task,
+  task, deleteTask
 }) => {
   return (
     <div style={{ width: "100%" }}>
       <div style={{ display: "flex", alignItems: "center" }}>
         <Checkbox
           checked={task.completed}
-          onChange={() => {}}
+          onChange={() => { }}
         >
           <span
             style={{ textDecoration: task.completed ? "line-through" : "none" }}
@@ -42,9 +43,11 @@ export const TaskItem: React.FC<TaskItemProps> = ({
             {task.name}
           </span>
         </Checkbox>
+        <Button type="link" danger onClick={() => deleteTask(task.id)}>
+          Delete 
+        </Button>
       </div>
-
-      { 
+      {
         //TODO: Implement the Subtasks functions here 
       }
     </div>

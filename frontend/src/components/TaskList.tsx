@@ -5,6 +5,7 @@ import { CreateTask, Task } from "../types/Task";
 import {
   createTask,
   fetchAllTasks,
+  deleteTask as deleteTaskApi
 } from "../api/TaskAPI";
 import { TaskItem } from "./TaskItem";
 
@@ -26,6 +27,14 @@ const TaskList: React.FC = () => {
       fetchTasks();
     });
   };
+
+  const deleteTask = (id: string) => {
+    deleteTaskApi(id).then((response) => {
+      message.success("Task deleted!");
+      fetchTasks();
+    });
+  }
+
 
   // TODO: Implement the addSubTask function
   // This function should take a parentId and a name as arguments
@@ -55,6 +64,7 @@ const TaskList: React.FC = () => {
           <List.Item key={task.id}>
             <TaskItem
               task={task}
+              deleteTask={deleteTask}
             />
           </List.Item>
         )}
