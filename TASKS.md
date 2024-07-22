@@ -4,13 +4,13 @@
 Mark the tasks you have completed with an `x` in the checkbox. This is required for your submission to be reviewed.
 - [x] Task 0: Run the Existing Application
 - [x] Task 1a: Implement the "Get Task" API in Backend TaskController
-- [ ] Task 1b: Implement the "Delete Task" API in Backend TaskController
-- [ ] Task 1c: Implement the "Update Task" API in Backend TaskController
-- [ ] Task 2: Implement the "Delete Task" Feature in Frontend
+- [x] Task 1b: Implement the "Delete Task" API in Backend TaskController
+- [x] Task 1c: Implement the "Update Task" API in Backend TaskController
+- [x] Task 2: Implement the "Delete Task" Feature in Frontend
 - [ ] Task 3: Extend the Application's Backend APIs to handle sub-tasks
 - [ ] Task 4: Extend the Application's Frontend to create and display sub-tasks
-- [ ] Task 5: Open-Ended Question (Performance)
-- [ ] Task 6: Open-Ended Question (Security)
+- [x] Task 5: Open-Ended Question (Performance)
+- [x] Task 6: Open-Ended Question (Security)
 
 ## Notes
 
@@ -140,6 +140,7 @@ Given that this application will be widely used by many users, discuss how you w
 
 ### Your Response
 Your Response Goes Here
+On the backend, add indexes to frequently queried database columns and implement simple caching for commonly accessed data. Use pagination when fetching large lists of tasks or subtasks. On the frontend, minimize the number of API calls by grouping related requests and implement infinite scrolling for long lists. Compress and minify JavaScript and CSS files to reduce load times. Use lazy loading for images and components that aren't immediately visible. Implement basic error handling and loading states to improve user experience during slow network conditions. Regularly test the application under different load scenarios to identify and fix performance bottlenecks. 
 
 ## Task 6: Open-Ended Question (Security)
 ### Description
@@ -147,7 +148,7 @@ Assuming users of this application would need to sign up for an account an log i
 
 ### Your Response
 Your Response Goes Here
-
+For a user authentication system, some common security vulnerabilities include weak passwords, unsecured storage of user credentials, and susceptibility to SQL injection attacks. To mitigate these, implement password complexity requirements (e.g., minimum length, mix of characters) and encourage users to use strong, unique passwords. Always hash and salt passwords before storing them in the database, never storing them in plain text. Use prepared statements or an ORM for database queries to prevent SQL injection. Implement HTTPS to encrypt data in transit. Add rate limiting on login attempts to prevent brute-force attacks. Use secure session management and implement proper logout functionality. For password reset functionality, use time-limited, single-use tokens. Regularly update and patch all libraries and frameworks used in the application to address known vulnerabilities.
 
 Upon completion of the tasks, you will have demonstrated your ability to:
 

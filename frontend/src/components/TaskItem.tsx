@@ -24,7 +24,7 @@ interface TaskItemProps {
   // - Add a subtask to the task
   // - Toggle the completion status of the task
   // - Toggle the completion status of a subtask
-  deleteTask: (id: string) => Promise<void>;
+  deleteTask: (id: string) => void;
 }
 
 export const TaskItem: React.FC<TaskItemProps> = ({
